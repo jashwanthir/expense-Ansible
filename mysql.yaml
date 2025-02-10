@@ -3,14 +3,6 @@
   become: yes
 
   tasks:
-  - name : install mysql libraries
-    ansible.builtin.pip:
-      name:  "{{ item }}"
-      executable: pip3.9
-    loop:
-    - cryptography
-    - PyMySQL
-    
   - name: install mysql server
     ansible.builtin.package:
       name: mysql-server
@@ -29,6 +21,10 @@
       login_host: mysql.daws82s.online
     register: mysql_info
     ignore_errors: true
+
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "MySQL info: {{ mysql_info }}"
 
   
 
