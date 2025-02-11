@@ -58,7 +58,7 @@
       state: import
       name: all
       login_user: root
-      login_password: Expense@1
+      login_password: ExpenseApp@1
       login_host: mysql.aws82s.shop
       target: /app/schema/backend.sql
 
