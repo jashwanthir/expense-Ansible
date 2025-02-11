@@ -62,8 +62,8 @@
       target: /app/schema/backend.sql
 
   - name: daemon reload and restart service
-    ansible.builtin.systems_service:
-      enable: true
+    ansible.builtin.systemd_service:
+      enabled: true
       state: restarted
       daemon_reload: true
       name: backend
